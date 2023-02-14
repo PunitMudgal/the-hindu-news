@@ -6,7 +6,8 @@ module.exports = {
     fontFamily: {
         designer  : 'Cinzel Decorative',
         kanit: 'Kanit',
-    }
+        dosis:  'Dosis', 
   },
   plugins: [],
+}
 }

@@ -20,21 +20,24 @@ function News(props) {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [props.category]);
 
   return (
-    <div className="mx-[5vw] md:my-14 my-5">
-     <h1 className="text-cyan-400 text-center font-bold md:text-[3rem] text-2xl">Top Headlines</h1>
+    <div className="mx-[5vw] md:my-14 my-5 flex justify-center flex-col">
+     <h1 className="text-gray-600 text-center font-bold md:text-[3rem] text-2xl font-designer">Top Headlines - <span className="text-orange-400 capitalize font-kanit">{props.category}</span></h1>
       {/* <div className="flex flex-wrap justify-evenly mt-10"> */}
-      <div className="grid grid-cols-3 mt-10">
+      <div className="md:grid grid grid-cols-2 md:grid-cols-4 mt-10">
 
     {news.map((posts) => (
+      // posts==null? <h1>'not found loading'</h1>:
                 <NewsProfile
                 title={posts.title}
                 description={posts.description}
                 image={posts.urlToImage}
                 url={posts.url}
                 key={posts.url}
+                content={posts.content}
+                author={posts.author}
               />
     ))}
       </div>
