@@ -18,10 +18,40 @@ function App() {
         <Routes>
         <Route
             path="/"
-            element={<News  />}
+            element={<News category='general' />}
           >
           </Route>
        
+          <Route
+            path="/entertainment"
+            element={<News category='entertainment' />}
+          >
+          </Route>
+
+          <Route
+            path="/health"
+            element={<News category='health' />}
+          >
+          </Route>
+
+          <Route
+            path="/sports"
+            element={<News category='sports' />}
+          >
+          </Route>
+
+          <Route
+            path="/business"
+            element={<News category='business' />}
+          >
+          </Route>
+
+          <Route
+            path="/technology"
+            element={<News category='technology' />}
+          >
+          </Route>
+
         </Routes>
       </div>
     </BrowserRouter>

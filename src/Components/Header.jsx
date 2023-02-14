@@ -1,11 +1,12 @@
 import React from "react";
 import logo from '../Image/logo.jpg'
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
     <nav className="shadow-sm bg-gray-50 md:p-7 sticky top-0 md:px-9 border-gray-200 px-2  sm:px-4 py-2.5 rounded ">
       <div className="container flex flex-wrap items-center justify-between mx-auto">
-        <a href="/" className="flex items-center">
+        <Link to="/" className="flex items-center">
           <img
             src={logo}
             className="w-32 mr-1 sm:h-9"
@@ -14,7 +15,7 @@ function Header() {
           <span className="self-center text-xl font-bold font-kanit whitespace-nowrap ">
             HINDU News
           </span>
-        </a>
+        </Link>
         <button
           data-collapse-toggle="navbar-default"
           type="button"
@@ -40,53 +41,53 @@ function Header() {
         <div className="hidden w-full md:block md:w-auto" id="navbar-default">
           <ul className="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white gap-6">
             <li>
-              <a
-                href="/home"
+              <Link
+                to="/"
                 className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 "
                 aria-current="page"
               >
-                Home
-              </a>
+               General
+              </Link>
             </li>
             <li>
-              <a
-                href="/entertainment"
+              <Link
+                to="/entertainment"
                 className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 "
               >
                 Entertainment
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/health"
+              <Link
+                to="/health"
                 className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 "
               >
                 Health
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/sports"
+              <Link
+                to="/sports"
                 className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 "
               >
                 Sports
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/business"
+              <Link
+                to="/business"
                 className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 "
               >
                 Business
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/technology"
+              <Link
+                to="/technology"
                 className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 "
               >
                 Technology
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
