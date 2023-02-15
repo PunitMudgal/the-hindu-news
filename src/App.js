@@ -10,6 +10,8 @@ import {
 } from "react-router-dom";
 
 function App() {
+  const pageSize = 10;
+
   return (
     <BrowserRouter>
       <div>
@@ -18,37 +20,37 @@ function App() {
         <Routes>
         <Route
             path="/"
-            element={<News category='general' />}
+            element={<News category='general' pageSize={pageSize} />}
           >
           </Route>
        
           <Route
             path="/entertainment"
-            element={<News category='entertainment' />}
+            element={<News category='entertainment' pageSize={pageSize} />}
           >
           </Route>
 
           <Route
             path="/health"
-            element={<News category='health' />}
+            element={<News category='health' pageSize={pageSize} />}
           >
           </Route>
 
           <Route
             path="/sports"
-            element={<News category='sports' />}
+            element={<News category='sports' pageSize={pageSize} />}
           >
           </Route>
 
           <Route
             path="/business"
-            element={<News category='business' />}
+            element={<News category='business' pageSize={pageSize} />}
           >
           </Route>
 
           <Route
             path="/technology"
-            element={<News category='technology' />}
+            element={<News category='technology' pageSize={pageSize} />}
           >
           </Route>
 

@@ -4,10 +4,19 @@ import axios from "axios";
 
 function News(props) {
   const [news, setNews] = useState([]);
+  const [page, setPage] = useState(1);
+
+const nextHandler = () => {
+  setPage(page+1);
+}
+
+const previousHandler = () => {
+  setPage(page-1);
+}
 
   useEffect(() => {
     axios
-      .get(`https://newsapi.org/v2/top-headlines?country=in&category=${props.category}&apiKey=aeb83b8d39ac408980786c4bf1ad40bc`
+      .get(`https://newsapi.org/v2/top-headlines?country=in&category=${props.category}&apiKey=aeb83b8d39ac408980786c4bf1ad40bc&page=${page}&pageSize=${props.pageSize}`
       )
       .then((res) => {
         // console.log(res);
@@ -16,14 +25,15 @@ function News(props) {
         // console.log(res)
         // console.log('below is news')
         // console.log(news);
+        console.log(page)
       })
       .catch((error) => {
         console.log(error);
       });
-  }, [props.category]);
+  }, [props.category,page]);
 
   return (
-    <div className="mx-[5vw] md:my-14 my-5 flex justify-center flex-col">
+    <>    <div className="mx-[5vw] md:my-14 my-5 flex justify-center flex-col">
      <h1 className="text-gray-600 text-center font-bold md:text-[3rem] text-2xl font-designer">Top Headlines - <span className="text-orange-400 capitalize font-kanit">{props.category}</span></h1>
       {/* <div className="flex flex-wrap justify-evenly mt-10"> */}
       <div className="md:grid grid grid-cols-2 md:grid-cols-4 mt-10">
@@ -40,15 +50,15 @@ function News(props) {
                 author={posts.author}
               />
     ))}
-      </div>
-      {/* {news.map((items) => {
-                return(
-                    <div key={items.url} className='flex flex-wrap' >
-                <NewsProfile title={items.title} description={items.description} image={items.urlToImage} url= {items.url}/>
-                </div>
-                )
-            } )} */}
+      </div>      
     </div>
+
+    <button onClick={nextHandler} className="bg-sky-400 px-3 py-1 float-right rounded m-4">Next</button>
+    <button onClick={previousHandler} className="bg-sky-400 px-3 py-1 float-left rounded m-4">Previous</button>
+    <p className="text-center font-extralight font-dosis text-stone-800 text-xl">Current Page = {page}</p>
+
+    </>
+
   );
 }
 export default News;
