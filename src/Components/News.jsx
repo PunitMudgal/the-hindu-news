@@ -7,11 +7,12 @@ function News(props) {
   const [page, setPage] = useState(1);
 
 const nextHandler = () => {
-  setPage(page+1);
+setPage(page+1);
 }
 
 const previousHandler = () => {
-  setPage(page-1);
+  page>=1 ? setPage(page-1) : alert('action cannot be performed')
+  
 }
 
   useEffect(() => {
