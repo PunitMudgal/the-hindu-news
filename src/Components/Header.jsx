@@ -37,6 +37,7 @@ function Header() {
           <ul className="flex flex-col p-4 mt-4 border border-gray-300 rounded-lg bg-slate-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 gap-6">
             <li>
               <NavLink
+                // onClick={clickHandlePage}
                 to="/"
                 className="block py-2 pl-3 pr-4 text-gray-800 rounded md:bg-transparent md:p-0 "
                 aria-current="page"

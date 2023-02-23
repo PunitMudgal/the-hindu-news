@@ -5,7 +5,7 @@ export default function NewsProfile(props) {
 
     <div className='md:w-80 w-64 bg-slate-50 flex flex-col md:m-4 m-2 border-gray-300 rounded-lg border p-2 shadow-md'>
       
-      <div className=''>
+      <div>
       <img src={!props.image? 'https://picsum.photos/320/200': props.image} className='object-contain rounded-md' alt="not found" />
       </div>
 
@@ -14,7 +14,7 @@ export default function NewsProfile(props) {
       <p className='font-semibold text-gray-700'>{props.content}</p>
       <p className='font-light '>Author: {!props.author? 'Unknown': props.author}</p>
       </div>
-      <a className='place-self-center bg-blue-500 font-semibold text-white rounded-md p-1' href={props.url}>Read More</a>
+      <a className='place-self-center bg-blue-500 font-semibold text-white rounded-md p-1' target="_blank" href={props.url}>Read More</a>
     </div>
     
     

@@ -55,7 +55,7 @@ const previousHandler = () => {
     </div>
 
     <button onClick={nextHandler} className="bg-sky-400 px-3 py-1 float-right rounded m-4">Next</button>
-    <button onClick={previousHandler} className="bg-sky-400 px-3 py-1 float-left rounded m-4">Previous</button>
+    <button onClick={previousHandler} disabled={page==1} className="bg-sky-400 px-3 py-1 float-left rounded m-4">Previous</button>
     <p className="text-center font-extralight font-dosis text-stone-800 text-xl">Current Page = {page}</p>
 
     </>
